@@ -7,6 +7,10 @@ class Programmer {
     /** @var string */
     private $bestLanguage;
 
+    /**
+     * Constructor
+     * @throws Exception
+     */
     public function __construct(array $availableLanguages, string $bestLanguage)
     {
         if (!in_array($bestLanguage, $availableLanguages)) {
@@ -16,24 +20,24 @@ class Programmer {
         $this->bestLanguage = $bestLanguage;
     }
 
-    public function getAvailableLanguages(): string
+    public function sayAvailableLanguages(): string
     {
         return "I can use " . implode("," , $this->availableLanguages);
     }
 
-    public function getBestLanguage(): string
+    public function appealBestLanguage(): string
     {
         return "My best programming language is " . $this->bestLanguage;
     }
 }
 
 $languages = ["PHP", "Java", "C#"];
-$bestLanguage = "Java";
+$bestLanguage = "Ruby";
 
 try {
     $programmer = new Programmer($languages, $bestLanguage);
-    echo $programmer->getAvailableLanguages() . "\n";
-    echo $programmer->getBestLanguage() . "\n";
-} catch (Exception $e) {
-    echo $e->getMessage();
+    echo $programmer->sayAvailableLanguages() . "\n";
+    echo $programmer->appealBestLanguage() . "\n";
+} catch (Exception $a) {
+    echo $a->getMessage();
 }

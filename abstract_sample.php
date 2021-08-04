@@ -1,28 +1,26 @@
 <?php
 abstract class American {
 
-    abstract protected function getName();
+    /** @var string */
+    protected $name;
 
     public function selfIntroduction() {
-        echo "My name is " . $this->getName() . "\n";
+        echo "My name is " . $this->name . "\n";
     }
 }
 
 class Alice extends American {
 
-    protected function getName()
-    {
-        echo "Alice\n";
-    }
+    /** @var string */
+    protected $name = 'Alice';
 }
 
 class Bob extends American {
 
-    protected function getName()
-    {
-        echo "Bob\n";
-    }
+    /** @var string */
+    protected $name = 'Bob';
 }
+
 
 $alice = new Alice();
 
